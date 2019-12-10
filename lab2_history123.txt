@@ -1,0 +1,99 @@
+  114  cd
+  115  mkdir test
+  116  cd test
+  117  touch file
+  118  chmod ugo-rwx file
+  119  echo "тест" >> file
+  120  cat file
+  121  chmod u+w file 
+  122  ll file
+  123  cat file
+  124  chmod u+r file 
+  125  ll
+  126  mkdir dir
+  127  cd dir
+  128  touch new_file
+  129  ls
+  130  chmod ugo-x dir
+  131  cat dir/newfile
+  132  echo "file2" new_file
+  133  echo "file2" >> new_file
+  134  ls
+  135  cd new_file
+  136  ls
+  137  chmod ugo-x dir
+  138  cat dir/new_file
+  139  rn dir/new_file
+  140  rm dir/new_file
+  141  chown root:root file
+  142  umask -S
+  143  umask u=rw,g-rwx,o-rx
+  144  touch file1
+  145  ls -l
+  146  umask u=rw,g=rw,o=rw 
+  147  touch file2
+  148  ll file2
+  149  cat file
+  150  ls -lR
+  151  history > lab2_history.txt
+  152  history >> lab2_history.txt
+  153  ls -lR
+  154  cd
+  155  history > lab2_history2.txt
+  156  history -a
+  157  history
+  158  mkdir test
+  159  cd test
+  160  ll test
+  161  chmod u+wrx test
+  162  ll 
+  163  cd test
+  164  touch file
+  165  ls
+  166  chmod ugo-rwx file
+  167  echo "тест" >> file
+  168  cat file
+  169  chmod u+w file
+  170  ll
+  171  echo "тестtest" file
+  172  echo "тестtest" >>  file
+  173  cat file
+  174  chmod g+r file
+  175  ll
+  176  cat file
+  177  mkdir dir
+  178  cd dir
+  179  touch new_file
+  180  echo "file 2" >> new_file
+  181  chmod ugo-x dir
+  182  cd
+  183  chmod ugo-x dir
+  184  ls
+  185  cd test
+  186  ls
+  187  chmod ugo-x dir
+  188  cat dir/new_file
+  189  rm dir/new_file
+  190  chown root:root file
+  191  umask -S
+  192  umask u=rw,g-rwx,o-rx
+  193  touch file1
+  194  umask u=rw,g=rw,o=rw
+  195  touch file2
+  196  ls -l
+  197  cat file
+  198  ls -lR
+  199  history > lab2_history123.txt
+[student@localhost test]$ ls -lR
+.:
+итого 4
+drw-rw-r--. 2 student student 22 дек 10 19:33 dir
+--w-r-----. 1 student student 13 дек 10 19:32 file
+-rw-------. 1 student student  0 дек 10 19:36 file1
+-rw-rw-rw-. 1 student student  0 дек 10 19:36 file2
+
+./dir:
+ls: невозможно получить доступ к ./dir/new_file: Отказано в доступе
+итого 0
+-????????? ? ? ? ?            ? new_file
+
